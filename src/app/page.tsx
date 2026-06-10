@@ -1,65 +1,66 @@
-import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className="flex flex-col items-center justify-center min-h-[calc(100vh-100px)] p-6 text-center">
+      <div className="max-w-3xl w-full space-y-8 bg-terminal-gray/50 p-10 border border-terminal-border backdrop-blur-sm relative overflow-hidden">
+        {/* Decoración de esquina táctica */}
+        <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-neon-cyan" />
+        <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-neon-cyan" />
+        <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-neon-cyan" />
+        <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-neon-cyan" />
+
+        <header className="space-y-2">
+          <div className="inline-block px-3 py-1 border border-neon-green text-neon-green text-xs tracking-[0.3em] uppercase mb-4">
+            Sistema de Seguridad de Nivel 4
+          </div>
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tighter text-white">
+            BOUNTY<span className="text-neon-green">HUNTER</span>
+            <span className="block text-2xl md:text-3xl text-terminal-border mt-2 font-mono">CRM // GUILD_OS v1.0.4</span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+        </header>
+
+        <p className="text-gray-400 max-w-xl mx-auto font-mono text-sm leading-relaxed">
+          Bienvenido al portal central del Gremio de Caza-Recompensas. 
+          Acceda para gestionar contratos, rastrear objetivos en el Borde Exterior y reclamar sus créditos galácticos.
+        </p>
+
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
+          <Link 
+            href="/login"
+            className="group relative px-8 py-3 bg-neon-green text-terminal-black font-bold uppercase tracking-widest overflow-hidden transition-all hover:bg-neon-cyan"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            <span className="relative z-10">Iniciar Sesión</span>
+            <div className="absolute inset-0 h-full w-full bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500" />
+          </Link>
+          
+          <button className="px-8 py-3 border border-terminal-border text-gray-400 uppercase tracking-widest font-mono text-xs hover:text-white hover:border-white transition-colors">
+            Solicitar Ingreso al Gremio
+          </button>
         </div>
-      </main>
+
+        <div className="pt-10 grid grid-cols-3 gap-4 border-t border-terminal-border">
+          <div className="text-center">
+            <span className="block text-neon-cyan text-xl font-bold">1.2k+</span>
+            <span className="text-[10px] text-gray-500 uppercase tracking-tighter font-mono">Contratos Activos</span>
+          </div>
+          <div className="text-center">
+            <span className="block text-neon-amber text-xl font-bold">48h</span>
+            <span className="text-[10px] text-gray-500 uppercase tracking-tighter font-mono">Promedio de Pago</span>
+          </div>
+          <div className="text-center">
+            <span className="block text-neon-red text-xl font-bold">Omega</span>
+            <span className="text-[10px] text-gray-500 uppercase tracking-tighter font-mono">Nivel de Alerta</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Elemento decorativo flotante */}
+      <div className="mt-8 flex items-center gap-2 text-[10px] text-terminal-border font-mono uppercase tracking-[0.2em] animate-pulse">
+        <span>Escaneando credenciales biométricas</span>
+        <span className="inline-block w-8 h-[1px] bg-terminal-border" />
+        <span className="text-neon-cyan font-bold">[ READY ]</span>
+      </div>
     </div>
   );
 }
